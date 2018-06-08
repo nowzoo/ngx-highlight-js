@@ -10,6 +10,8 @@ import { ApiRouteComponent } from './api-route/api-route.component';
 import { ExamplesRouteComponent } from './examples-route/examples-route.component';
 import { ExampleUrlComponent } from './example-url/example-url.component';
 import { ExampleUrlVariableComponent } from './example-url-variable/example-url-variable.component';
+import { ExampleStringComponent } from './example-string/example-string.component';
+import { ExampleStringVariableComponent } from './example-string-variable/example-string-variable.component';
 
 const routes: Routes = [
   {path: 'examples', component: ExamplesRouteComponent},
@@ -27,6 +29,8 @@ const routes: Routes = [
     ExamplesRouteComponent,
     ExampleUrlComponent,
     ExampleUrlVariableComponent,
+    ExampleStringComponent,
+    ExampleStringVariableComponent,
   ],
   imports: [
     BrowserModule,
