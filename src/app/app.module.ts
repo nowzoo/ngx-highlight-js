@@ -12,6 +12,7 @@ import { ExampleUrlComponent } from './example-url/example-url.component';
 import { ExampleUrlVariableComponent } from './example-url-variable/example-url-variable.component';
 import { ExampleStringComponent } from './example-string/example-string.component';
 import { ExampleStringVariableComponent } from './example-string-variable/example-string-variable.component';
+import { ExampleSetThemeComponent } from './example-set-theme/example-set-theme.component';
 
 const routes: Routes = [
   {path: 'examples', component: ExamplesRouteComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
     ExampleUrlVariableComponent,
     ExampleStringComponent,
     ExampleStringVariableComponent,
+    ExampleSetThemeComponent,
   ],
   imports: [
     BrowserModule,

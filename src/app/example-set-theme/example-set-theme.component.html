@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label for="app-example-set-theme-choose">Choose</label>
+
+  <select id="app-example-set-theme-choose" [formControl]="fc" class="form-control">
+    <option *ngFor="let t of themes">{{t}}</option>
+  </select>
+  <small class="text-muted form-text">
+    Currently: {{fc.value}}
+  </small>
+</div>
+
+<ngx-highlight-js
+  lang="bash"
+  code="npm i"></ngx-highlight-js>

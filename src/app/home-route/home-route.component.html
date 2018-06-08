@@ -4,7 +4,18 @@
 
 <p class="lead">
   Angular component and service for <a href="https://highlightjs.org">Highlight.js</a>.
-  Loads languages and themes as needed. Works with remote URLs or strings/variables.
+  Works with remote URLs or strings/variables.
+  Loads highlight.js core, andlanguages and themes as needed.
+  No dependencies.
 </p>
 
-<ngx-highlight-js lang="scss" url="https://raw.githubusercontent.com/twbs/bootstrap/v4.1.1/scss/_variables.scss"></ngx-highlight-js>
+<p>Do this...</p>
+<ngx-highlight-js lang="xml" [code]="npmI"></ngx-highlight-js>
+<p>Get this...</p>
+<ngx-highlight-js lang="bash" code="npm i @nowzoo/ngx-highlight-js --save"></ngx-highlight-js>
+
+<p>
+  <a routerLink="/quick-start" class="btn btn-primary mr-4">Quick Start</a>
+  <a routerLink="/examples" class="btn btn-primary mr-4">More Examples</a>
+  <a routerLink="/api" class="btn btn-primary mr-4">API</a>
+</p>

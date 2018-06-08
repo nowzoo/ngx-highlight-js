@@ -9,15 +9,10 @@ import { NgxHighlightJsService } from '@nowzoo/ngx-highlight-js';
 })
 export class HomeRouteComponent implements OnInit {
 
-  npmInstall = 'npm i @nowzoo/ngx-highlight-js --save';
-  cmpWithURL = `<ngx-highlight-js lang="scss"
-  url="https://raw.githubusercontent.com/twbs/bootstrap/v4.1.1/scss/_variables.scss"></ngx-highlight-js>`;
-  cmpWithCode = `<!-- string... -->
-<ngx-highlight-js lang="bash"
-  code="npm i @nowzoo/ngx-highlight-js --save"></ngx-highlight-js>
-<!-- variable... -->
-<ngx-highlight-js lang="bash"
-  [code]="myVar"></ngx-highlight-js>`;
+  npmI = `<ngx-highlight-js
+  lang="bash"
+  code="npm i @nowzoo/ngx-highlight-js --save">
+</ngx-highlight-js>`;
   constructor(
     private service: NgxHighlightJsService
   ) { }
