@@ -3,7 +3,7 @@
 
 Angular component and service for Highlight.js. Works with remote URLs or strings/variables. Loads highlight.js core, andlanguages and themes as needed. No dependencies.
 
-[Demos](https://nowzoo.github.io/ngx-highlight-js/index.html)
+[Demos](https://nowzoo.github.io/ngx-highlight-js/)
 
 ## Quick Start
 Install the library with NPM...
