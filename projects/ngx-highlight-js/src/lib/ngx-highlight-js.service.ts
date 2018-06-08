@@ -1,5 +1,4 @@
 import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import { NgxHighlightJsOptions } from './ngx-highlight-js-options';
 declare const hljs: any;
@@ -21,7 +20,6 @@ export class NgxHighlightJsService {
 
   constructor(
     private options: NgxHighlightJsOptions,
-    private http: HttpClient,
     rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
@@ -92,6 +90,8 @@ export class NgxHighlightJsService {
 
 
 
+
+
   loadLanguage(lang: string): Promise<any> {
     if (this.isInitialized && hljs.listLanguages().indexOf(lang) >= 0) {
       return Promise.resolve(hljs);
@@ -124,7 +124,7 @@ export class NgxHighlightJsService {
   highlight(lang: string, code: string): Promise<string> {
     return this.loadLanguage(lang)
       .then(() => {
-        const hl = hljs.fixMarkup(hljs.highlight(lang, code).value);
+        const hl = hljs.highlight(lang, code).value;
         return hl;
       });
   }
