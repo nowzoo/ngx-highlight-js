@@ -5,6 +5,44 @@ Angular component and service for Highlight.js. Works with remote URLs or string
 
 [Demos](https://nowzoo.github.io/ngx-highlight-js/index.html)
 
+## Quick Start
+Install the library with NPM...
+
+
+```bash
+npm i @nowzoo/ngx-highlight-js --save
+````
+
+Import into your `AppModule` with `NgxHighlightJsModule.forRoot()`...</p>
+```ts
+import { NgxHighlightJsModule } from '@nowzoo/ngx-highlight-js';
+// other imports...
+@NgModule({
+imports: [
+  NgxHighlightJsModule.forRoot(),
+  // other imports...
+]
+})
+export class AppModule { }
+```
+
+Add an `NgxHighlightJsComponent`. You can provide an absolute or relative URL with the `url` input...
+
+```ts
+<ngx-highlight-js lang="scss"
+  url="https://raw.githubusercontent.com/twbs/bootstrap/v4.1.1/scss/_variables.scss">
+</ngx-highlight-js>
+```
+Or use the `code` input to use a string or a variable...
+
+```ts
+`<!-- string... -->
+<ngx-highlight-js lang="bash"
+  code="npm i @nowzoo/ngx-highlight-js --save"></ngx-highlight-js>
+<!-- variable... -->
+<ngx-highlight-js lang="bash"
+  [code]="myVar"></ngx-highlight-js>
+```
 ## API
 
 ### Module: `NgxHighlightJsModule`
