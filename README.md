@@ -11,7 +11,7 @@ Install the library with NPM...
 
 ```bash
 npm i @nowzoo/ngx-highlight-js --save
-````
+```
 
 Import into your `AppModule` with `NgxHighlightJsModule.forRoot()`...</p>
 ```ts
@@ -36,7 +36,7 @@ Add an `NgxHighlightJsComponent`. You can provide an absolute or relative URL wi
 Or use the `code` input to use a string or a variable...
 
 ```ts
-`<!-- string... -->
+<!-- string... -->
 <ngx-highlight-js lang="bash"
   code="npm i @nowzoo/ngx-highlight-js --save"></ngx-highlight-js>
 <!-- variable... -->
@@ -45,17 +45,24 @@ Or use the `code` input to use a string or a variable...
 ```
 ## API
 
-### Module: `NgxHighlightJsModule`
+### Module: `NgxHighlightJsModule`  
+
 `static forRoot()`
 
 
-### Interface: `INgxHighlightJsOptions`
+### Class: `NgxHighlightJsOptions`
 
-`baseCdnURL?: string`  
+You can `provide` this in your module to change the theme or base URL for getting highlight.js.
+```ts
+providers: [{provide: NgxHighlightJsOptions, useValue: {baseCdnURL: '//another.cdn/path', theme: 'dracula'}}]
+```
+`baseCdnURL: string`  
 Where to find the highlight.js files. Default: `//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0`.
 
-`theme?: string`  
+`theme: string`  
 The basename of the theme you want to use, like `'monokai-sublime'`. Default: `'default'`.
+
+
 
 ### Service: `NgxHighlightJsService`
 
