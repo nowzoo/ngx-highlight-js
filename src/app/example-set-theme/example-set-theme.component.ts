@@ -22,9 +22,20 @@ export class ExampleSetThemeComponent implements OnInit {
 
   ngOnInit() {
     this.fc = new FormControl(this.themes[0]);
-    this.fc.valueChanges.subscribe((val) => {
-      this.service.loadTheme(val);
-    });
+    this.service.hljs()
+      .then(() => {
+        const theme = this.service.currentTheme;
+        console.log(theme);
+        if (this.themes.indexOf(theme) === -1) {
+          this.themes.push(theme);
+        }
+        this.fc.setValue(theme);
+        this.fc.valueChanges.subscribe((val) => {
+          this.service.loadTheme(val);
+        });
+      });
+
+
   }
 
 }

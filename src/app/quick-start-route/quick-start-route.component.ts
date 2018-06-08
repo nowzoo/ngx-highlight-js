@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuickStartRouteComponent implements OnInit {
 
+  modImp = `import { NgxHighlightJsModule } from '@nowzoo/ngx-highlight-js';
+// other imports...
+
+@NgModule({
+  imports: [
+    NgxHighlightJsModule.forRoot(),
+    // other imports...
+  ]
+})
+export class AppModule { }`;
   cmpWithURL = `<ngx-highlight-js lang="scss"
   url="https://raw.githubusercontent.com/twbs/bootstrap/v4.1.1/scss/_variables.scss"></ngx-highlight-js>`;
   cmpWithCode = `<!-- string... -->

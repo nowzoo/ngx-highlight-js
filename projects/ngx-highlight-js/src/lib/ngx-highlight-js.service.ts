@@ -10,9 +10,14 @@ export class NgxHighlightJsService {
   private _loadedAssets: {[url: string]: string} = {};
   private _currentThemeUrl: string = null;
   private _assetPromises: {[url: string]: Promise<any>} = {};
+  private _currentTheme: string;
   private renderer: Renderer2;
   private isInitializing: false | Promise<void> = false;
   private isInitialized = false;
+
+  get currentTheme(): string {
+    return this._currentTheme;
+  }
 
   constructor(
     private options: NgxHighlightJsOptions,
@@ -32,7 +37,7 @@ export class NgxHighlightJsService {
 
     const promises = [];
 
-    promises.push(this.loadAsset(`styles/${this.options.theme}.min.css`));
+    promises.push(this.loadTheme(this.options.theme));
     promises.push(this.loadAsset(`highlight.min.js`));
     this.isInitializing = Promise.all(promises)
       .then(() => {
@@ -109,7 +114,10 @@ export class NgxHighlightJsService {
   }
 
   loadTheme(theme: string) {
-    return this.loadAsset(`styles/${theme}.min.css`);
+    return this.loadAsset(`styles/${theme}.min.css`)
+      .then(() => {
+        this._currentTheme = theme;
+      });
   }
 
 
