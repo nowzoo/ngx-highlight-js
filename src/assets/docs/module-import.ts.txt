@@ -1,0 +1,10 @@
+import { NgxHighlightJsModule } from '@nowzoo/ngx-highlight-js';
+// other imports...
+
+@NgModule({
+  imports: [
+    NgxHighlightJsModule.forRoot(),
+    // other imports...
+  ]
+})
+export class AppModule { }

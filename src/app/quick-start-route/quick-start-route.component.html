@@ -1,0 +1,17 @@
+<header class="route-header">
+  <h1 class="display-2">Quick Start</h1>
+</header>
+
+<p>Install the library with NPM...</p>
+<ngx-highlight-js lang="bash" code="npm i @nowzoo/ngx-highlight-js --save"></ngx-highlight-js>
+<p>Import into your <code>AppModule</code> with <code>NgxHighlightJsModule.forRoot()</code>...</p>
+<ngx-highlight-js lang="typescript" url="/assets/docs/module-import.ts.txt"></ngx-highlight-js>
+<p>
+  Add an <code>NgxHighlightJsComponent</code>. You can provide an absolute or relative URL with the
+  <code>url</code> input...
+</p>
+<ngx-highlight-js lang="xml" [code]="cmpWithURL"></ngx-highlight-js>
+<p>
+  Or use the <code>code</code> input to use a string or a variable...
+</p>
+<ngx-highlight-js lang="xml" [code]="cmpWithCode"></ngx-highlight-js>

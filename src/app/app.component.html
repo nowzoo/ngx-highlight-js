@@ -1,8 +1,19 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <h2>Here's the library component: </h2>
-  <ngx-library-starter></ngx-library-starter>
+
+<div class="container my-4">
+  <div class="d-flex mb-2 align-items-center justify-content-between">
+    <div>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ngx-highlight-js</a>
+      |
+      <a routerLink="/quick-start" routerLinkActive="active">Quick Start</a>
+      |
+      <a routerLink="/examples" routerLinkActive="active">Examples</a>
+      |
+      <a routerLink="/api">API</a>
+    </div>
+    <div>
+      Github
+    </div>
+
+  </div>
+  <router-outlet></router-outlet>
 </div>

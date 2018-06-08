@@ -17,11 +17,11 @@
       "dom"
     ],
     "paths": {
-      "@nowzoo/ngx-library-starter": [
-        "dist/ngx-library-starter"
+      "@nowzoo/ngx-highlight-js": [
+        "dist/ngx-highlight-js"
       ],
-      "@nowzoo/ngx-library-starter/*": [
-        "dist/ngx-library-starter/*"
+      "@nowzoo/ngx-highlight-js/*": [
+        "dist/ngx-highlight-js/*"
       ]
     }
   }
