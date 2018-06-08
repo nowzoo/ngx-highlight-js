@@ -8,16 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 export class ExamplesRouteComponent implements OnInit {
 
 
-  example: string;
 
   constructor(
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((val) => {
-      this.example = val.example || 'string';
-    });
+
   }
 
 }

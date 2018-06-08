@@ -1,26 +1,9 @@
 <header class="route-header">
-  <h1 class="display-2">Examples</h1>
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="/examples/string">Using a string</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="/examples/string-var">Using a dynamic string</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="/examples/url">Using a URL</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="/examples/url-var">Dynamic URL</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="/examples/theme">Set theme</a>
-    </li>
-  </ul>
+  <h1 class="display-2">Demos</h1>
 </header>
 
 
-<section *ngIf="example==='string'">
+<section>
   <h3>Using a string</h3>
 
   <div class="row">
@@ -36,7 +19,7 @@
     </div></div>
   </div>
 </section>
-<section *ngIf="example==='string-var'">
+<section>
   <h3>Using a dynamic string</h3>
 
   <div class="row">
@@ -57,7 +40,7 @@
     </div>
   </div>
 </section>
-<section *ngIf="example==='url'">
+<section>
   <h3>Using a URL</h3>
 
   <p>
@@ -78,7 +61,7 @@
     </div>
   </div>
 </section>
-<section *ngIf="example==='url-var'">
+<section>
   <h3>Dynamic URL</h3>
   <p>
     This example uses a variable URL.
@@ -101,7 +84,7 @@
     </div>
   </div>
 </section>
-<section *ngIf="example==='theme'">
+<section>
   <h3>Set theme</h3>
   <p>
     You can swap themes using the service.
