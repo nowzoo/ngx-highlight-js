@@ -1,5 +1,5 @@
 
-#ngx-highlight-js
+# ngx-highlight-js
 
 Angular component and service for Highlight.js. Works with remote URLs or strings/variables. Loads highlight.js core, andlanguages and themes as needed. No dependencies.
 
