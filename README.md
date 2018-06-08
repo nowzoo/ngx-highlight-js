@@ -65,10 +65,12 @@ providers: [
 ]
 ```
 `baseCdnURL: string`  
-Where to find the highlight.js files. Default: `//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0`.
+Where to find the highlight.js files.  
+Default: `//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0`.
 
 `theme: string`  
-The basename of the theme you want to use, like `'monokai-sublime'`. Default: `'default'`.
+The basename of the theme you want to use, like `'monokai-sublime'`.  
+Default: `'default'`.
 
 
 
