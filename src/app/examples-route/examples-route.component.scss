@@ -1,0 +1,13 @@
+.nav-link.active {
+  color: #666;
+  font-weight: bold;
+}
+.card {
+  padding: 0;
+  border: none;
+  border-left: 1px solid #DDD;
+  padding-left: 12px;
+  pre.hljs {
+    margin: 0 0;
+  }
+}

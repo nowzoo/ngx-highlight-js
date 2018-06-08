@@ -4,23 +4,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NgxHighlightJsComponent } from './ngx-highlight-js.component';
 import { NgxHighlightJsService } from './ngx-highlight-js.service';
-import { NgxHighlightJsOptions, INgxHighlightJsOptions } from './ngx-highlight-js-options';
+import { NgxHighlightJsOptions } from './ngx-highlight-js-options';
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
   declarations: [NgxHighlightJsComponent],
-  exports: [NgxHighlightJsComponent]
+  exports: [NgxHighlightJsComponent],
+  providers: [NgxHighlightJsService, {provide: NgxHighlightJsOptions, useClass: NgxHighlightJsOptions}]
 })
 export class NgxHighlightJsModule {
-  public static forRoot(options?: INgxHighlightJsOptions): ModuleWithProviders {
-    const defaultOptions = new NgxHighlightJsOptions();
-    options = options || defaultOptions;
-    options = Object.assign({}, defaultOptions, options);
-    return {ngModule: NgxHighlightJsModule, providers: [
-      NgxHighlightJsService,
-      {provide: NgxHighlightJsOptions, useValue: options}
-    ]};
+  public static forRoot(): ModuleWithProviders {
+    return {ngModule: NgxHighlightJsModule, providers: [NgxHighlightJsService,
+      {provide: NgxHighlightJsOptions, useClass: NgxHighlightJsOptions}]};
   }
 }

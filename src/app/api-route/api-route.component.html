@@ -31,6 +31,8 @@
 </section>
 <section>
   <h3>Service: <code>NgxHighlightJsService</code></h3>
+
+  <h6>Methods</h6>
   <ul class="list-unstyled">
     <li>
       <code>hljs(): Promise&lt;any&gt;</code>
@@ -49,7 +51,21 @@
       <br>
       Highlights <code>code</code> with <code>lang</code>.
     </li>
+    <li>
+      <code>loadTheme(theme: string): Promise&lt;void&gt;</code>
+      <br>
+      Loads a different theme, globally. Use the basename of the theme, like <code>'dracula'</code>.
+      
+    </li>
 
+  </ul>
+  <h6>Property</h6>
+  <ul class="list-unstyled">
+    <li>
+      <code>theme: string</code>
+      <br>
+      The currently loaded theme.
+    </li>
   </ul>
 
 </section>

@@ -1,30 +1,50 @@
 <header class="route-header">
   <h1 class="display-2">Examples</h1>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="/examples/string">Using a string</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="/examples/string-var">Using a dynamic string</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="/examples/url">Using a URL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="/examples/url-var">Dynamic URL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" routerLink="/examples/theme">Set theme</a>
+    </li>
+  </ul>
 </header>
 
-<section>
+
+<section *ngIf="example==='string'">
   <h3>Using a string</h3>
 
   <div class="row">
     <div class="col-lg-6">
-      <div class="card card-body"><app-example-string></app-example-string></div>
+      <app-example-string></app-example-string>
     </div>
     <div class="col-lg-6">
+      <div class="card card-body">
       <small class="text-muted">example-string.component.html</small>
       <ngx-highlight-js
         lang="xml"
         url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-string/example-string.component.html"></ngx-highlight-js>
-    </div>
+    </div></div>
   </div>
 </section>
-<section>
+<section *ngIf="example==='string-var'">
   <h3>Using a dynamic string</h3>
 
   <div class="row">
     <div class="col-lg-6">
-      <div class="card card-body"><app-example-string-variable></app-example-string-variable></div>
+      <app-example-string-variable></app-example-string-variable>
     </div>
     <div class="col-lg-6">
+      <div class="card card-body">
       <small class="text-muted">example-string-variable.component.html</small>
       <ngx-highlight-js
         lang="xml"
@@ -33,11 +53,11 @@
         <ngx-highlight-js
           lang="typescript"
           url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-string-variable/example-string-variable.component.ts"></ngx-highlight-js>
+        </div>
     </div>
   </div>
 </section>
-
-<section>
+<section *ngIf="example==='url'">
   <h3>Using a URL</h3>
 
   <p>
@@ -46,27 +66,29 @@
    </p>
   <div class="row">
     <div class="col-lg-6">
-      <div class="card card-body"><app-example-url></app-example-url></div>
+      <app-example-url></app-example-url>
     </div>
     <div class="col-lg-6">
+      <div class="card card-body">
       <small class="text-muted">example-url.component.html</small>
       <ngx-highlight-js
         lang="xml"
         url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-url/example-url.component.html"></ngx-highlight-js>
-
+      </div>
     </div>
   </div>
 </section>
-<section>
+<section *ngIf="example==='url-var'">
   <h3>Dynamic URL</h3>
   <p>
     This example uses a variable URL.
    </p>
   <div class="row">
     <div class="col-lg-6">
-      <div class="card card-body"><app-example-url-variable></app-example-url-variable></div>
+      <app-example-url-variable></app-example-url-variable>
     </div>
     <div class="col-lg-6">
+      <div class="card card-body">
         <small class="text-muted">example-url-variable.component.html</small>
         <ngx-highlight-js
           lang="xml"
@@ -75,28 +97,26 @@
         <ngx-highlight-js
           lang="typescript"
           url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-url-variable/example-url-variable.component.ts"></ngx-highlight-js>
+      </div>
     </div>
   </div>
 </section>
-
-<section>
+<section *ngIf="example==='theme'">
   <h3>Set theme</h3>
   <p>
     You can swap themes using the service.
    </p>
   <div class="row">
     <div class="col-lg-6">
-      <div class="card card-body"><app-example-set-theme></app-example-set-theme></div>
+      <app-example-set-theme></app-example-set-theme>
     </div>
     <div class="col-lg-6">
-        <small class="text-muted">example-set-theme.component.html</small>
-        <ngx-highlight-js
-          lang="xml"
-          url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-set-theme/example-set-theme.component.html"></ngx-highlight-js>
+      <div class="card card-body">
         <small class="text-muted">example-set-theme.component.ts</small>
         <ngx-highlight-js
           lang="typescript"
           url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-set-theme/example-set-theme.component.ts"></ngx-highlight-js>
+      </div>
     </div>
   </div>
 </section>

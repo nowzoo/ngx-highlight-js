@@ -1,19 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a routerLink="/" class="navbar-brand">ngx-highlight-js</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class="container my-4">
-  <div class="d-flex mb-2 align-items-center justify-content-between">
-    <div>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ngx-highlight-js</a>
-      |
-      <a routerLink="/quick-start" routerLinkActive="active">Quick Start</a>
-      |
-      <a routerLink="/examples" routerLinkActive="active">Examples</a>
-      |
-      <a routerLink="/api">API</a>
-    </div>
-    <div>
-      Github
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a routerLink="/quick-start" class="nav-link">Quick Start</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a routerLink="/examples" class="nav-link">Examples</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a routerLink="/api" class="nav-link">API</a>
+      </li>
 
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="https://github.com/nowzoo/ngx-highlight-js">
+          Github
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+    </ul>
   </div>
+</nav>
+<div class="container my-4">
+
+
+
   <router-outlet></router-outlet>
 </div>

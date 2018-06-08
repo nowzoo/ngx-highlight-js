@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { NgxHighlightJsModule, INgxHighlightJsOptions } from '@nowzoo/ngx-highlight-js';
+import { NgxHighlightJsModule, NgxHighlightJsOptions } from '@nowzoo/ngx-highlight-js';
 import { AppComponent } from './app.component';
 import { HomeRouteComponent } from './home-route/home-route.component';
 import { QuickStartRouteComponent } from './quick-start-route/quick-start-route.component';
@@ -15,11 +15,16 @@ import { ExampleStringVariableComponent } from './example-string-variable/exampl
 import { ExampleSetThemeComponent } from './example-set-theme/example-set-theme.component';
 
 const routes: Routes = [
-  {path: 'examples', component: ExamplesRouteComponent},
+  {path: 'examples', children: [
+    {path: ':example', component: ExamplesRouteComponent},
+    {path: '', component: ExamplesRouteComponent},
+  ]},
   {path: 'api', component: ApiRouteComponent},
   {path: 'quick-start', component: QuickStartRouteComponent},
   {path: '', component: HomeRouteComponent},
 ];
+const opts = new NgxHighlightJsOptions();
+opts.theme = 'monokai-sublime';
 
 @NgModule({
   declarations: [
@@ -38,9 +43,9 @@ const routes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    NgxHighlightJsModule.forRoot({theme: 'github'})
+    NgxHighlightJsModule.forRoot()
   ],
-  providers: [],
+  providers: [{provide: NgxHighlightJsOptions, useValue: opts}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -113,7 +113,7 @@ export class NgxHighlightJsService {
       });
   }
 
-  loadTheme(theme: string) {
+  loadTheme(theme: string): Promise<void> {
     return this.loadAsset(`styles/${theme}.min.css`)
       .then(() => {
         this._currentTheme = theme;

@@ -3,16 +3,22 @@
 h1.display-2 {
   // font-size: 2em;
 }
+pre.hljs {
+  margin: 1em 0;
+}
+.card pre.hljs {
+  margin: 0 0;
+}
+
 
 .route-header {
   margin: 2em 0;
   padding-bottom: 1em;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 2px solid #DDD;
 
 }
 section {
   margin-bottom: 2em;
-  padding-bottom: 2em;
-  border-bottom: 1px solid #EEE;
+
 
 }
