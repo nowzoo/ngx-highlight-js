@@ -8,8 +8,8 @@ Angular component and service for Highlight.js. Works with remote URLs or string
 ## API
 
 ### Module: `NgxHighlightJsModule`
-`static forRoot(options?: INgxHighlightJsOptions)`
-Optional configuration for theme and CDN.
+`static forRoot()`
+
 
 ### Interface: `INgxHighlightJsOptions`
 
@@ -23,16 +23,16 @@ The basename of the theme you want to use, like `'monokai-sublime'`. Default: `'
 
 **Methods**
 
-`hljs(): Promise&lt;any&gt;`
+`hljs(): Promise<any>`
 Ensures highlight.js is loaded, then resolves with the global `hljs` instance.
 
-`loadLanguage(lang: string): Promise&lt;any&gt;`
+`loadLanguage(lang: string): Promise<any>`
 Ensures the language is loaded, then resolves with the global `hljs` instance.
 
-`highlight(lang: string, code: string): Promise&lt;string&gt;`
+`highlight(lang: string, code: string): Promise<string>`
 Highlights `code` with `lang`.
 
-`loadTheme(theme: string): Promise&lt;void&gt;`
+`loadTheme(theme: string): Promise<void>`
 Loads a different theme, globally. Use the basename of the theme, like `'dracula'`.
 
 **Properties**
