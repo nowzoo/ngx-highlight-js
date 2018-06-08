@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { NgxHighlightJsModule, INgxHighlightJsOptions } from '@nowzoo/ngx-highlight-js';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { QuickStartRouteComponent } from './quick-start-route/quick-start-route.
 import { ApiRouteComponent } from './api-route/api-route.component';
 import { ExamplesRouteComponent } from './examples-route/examples-route.component';
 import { ExampleUrlComponent } from './example-url/example-url.component';
+import { ExampleUrlVariableComponent } from './example-url-variable/example-url-variable.component';
 
 const routes: Routes = [
   {path: 'examples', component: ExamplesRouteComponent},
@@ -24,9 +26,11 @@ const routes: Routes = [
     ApiRouteComponent,
     ExamplesRouteComponent,
     ExampleUrlComponent,
+    ExampleUrlVariableComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     NgxHighlightJsModule.forRoot({theme: 'github'})
   ],

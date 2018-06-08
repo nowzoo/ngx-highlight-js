@@ -4,15 +4,42 @@
 
 <section>
   <h3>Using a URL</h3>
+
+  <p>
+    This example displays the <code>_align.scss</code> file found on Github:
+     <a href="https://raw.githubusercontent.com/twbs/bootstrap/v4.1.1/scss/utilities/_align.scss" target="_blank">https://raw.githubusercontent.com/twbs/.../_align.scss</a>
+   </p>
   <div class="row">
-    <div class="col-sm-4">
-      <p>Component</p>
+    <div class="col-lg-6">
+      <p class="text-muted">Example</p>
+      <app-example-url></app-example-url>
+    </div>
+    <div class="col-lg-6">
+      <p class="text-muted">Example Code</p>
       <ngx-highlight-js
         lang="xml"
-        [code]="ex1Code"></ngx-highlight-js>
+        url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-url/example-url.component.html"></ngx-highlight-js>
+
     </div>
-    <div class="col-sm-8">
-      <app-example-url></app-example-url>
+  </div>
+</section>
+<section>
+  <h3>Dynamic URL</h3>
+
+  <p>
+    This example uses the a variable URL.
+   </p>
+  <div class="row">
+    <div class="col-lg-6">
+      <p class="text-muted">Example</p>
+      <app-example-url-variable></app-example-url-variable>
+    </div>
+    <div class="col-lg-6">
+      <p class="text-muted">Example Code</p>
+      <ngx-highlight-js
+        lang="xml"
+        url="https://raw.githubusercontent.com/nowzoo/ngx-highlight-js/master/src/app/example-url/example-url.component.html"></ngx-highlight-js>
+
     </div>
   </div>
 </section>
