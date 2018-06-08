@@ -13,31 +13,31 @@ Angular component and service for Highlight.js. Works with remote URLs or string
 
 ### Interface: `INgxHighlightJsOptions`
 
-`baseCdnURL?: string`
+`baseCdnURL?: string`  
 Where to find the highlight.js files. Default: `//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0`.
 
-`theme?: string`
+`theme?: string`  
 The basename of the theme you want to use, like `'monokai-sublime'`. Default: `'default'`.
 
 ### Service: `NgxHighlightJsService`
 
 **Methods**
 
-`hljs(): Promise<any>`
+`hljs(): Promise<any>`  
 Ensures highlight.js is loaded, then resolves with the global `hljs` instance.
 
-`loadLanguage(lang: string): Promise<any>`
+`loadLanguage(lang: string): Promise<any>`  
 Ensures the language is loaded, then resolves with the global `hljs` instance.
 
-`highlight(lang: string, code: string): Promise<string>`
+`highlight(lang: string, code: string): Promise<string>`  
 Highlights `code` with `lang`.
 
-`loadTheme(theme: string): Promise<void>`
+`loadTheme(theme: string): Promise<void>`  
 Loads a different theme, globally. Use the basename of the theme, like `'dracula'`.
 
 **Properties**
 
-`theme: string`
+`theme: string`  
 The currently loaded theme.
 
 ### Component: `NgxHighlightJsComponent`
@@ -45,13 +45,13 @@ selector: `ngx-highlight-js` | exportAs: `ngxHighlightJs`
 
 **Inputs**
 
-`code: string`
+`code: string`  
 A string containing the code you want to highlight.
 
-`url: string`
+`url: string`  
 A URL with the code you want to highlight.
 
-`lang: string`
+`lang: string`  
 Required. The language.
 
 **Properties**
