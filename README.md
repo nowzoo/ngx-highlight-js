@@ -54,7 +54,15 @@ Or use the `code` input to use a string or a variable...
 
 You can `provide` this in your module to change the theme or base URL for getting highlight.js.
 ```ts
-providers: [{provide: NgxHighlightJsOptions, useValue: {baseCdnURL: '//another.cdn/path', theme: 'dracula'}}]
+providers: [
+  {
+    provide: NgxHighlightJsOptions,
+    useValue: {
+      baseCdnURL: '//another.cdn/path',
+      theme: 'dracula'
+    }
+  }
+]
 ```
 `baseCdnURL: string`  
 Where to find the highlight.js files. Default: `//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0`.
