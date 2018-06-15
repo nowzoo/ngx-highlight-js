@@ -6,9 +6,8 @@ import { HttpClient } from '@angular/common/http';
   selector: 'ngx-highlight-js',
   exportAs: 'ngxHighlightJs',
   template: `
-  <pre
-    [ngClass]="'hljs ' + lang"
-    [innerHTML]="highlightedHTML"></pre>
+  <pre><code [ngClass]="'hljs ' + lang"
+  [innerHTML]="highlightedHTML"></code></pre>
   `
 })
 export class NgxHighlightJsComponent implements OnInit, OnChanges {
