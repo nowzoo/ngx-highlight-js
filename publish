@@ -1,2 +1,15 @@
 #!/usr/bin/env bash
-cd projects/ngx-highlight-js && npm version patch && cd ../.. && ng build ngx-highlight-js --prod && cp README.md LICENSE dist/ngx-highlight-js/ && cd dist/ngx-highlight-js && npm publish && cd ../..
+
+cd projects/ngx-highlight-js
+VERSION="$(npm version patch)"
+cd ../..
+ng build ngx-highlight-js --prod
+cp README.md LICENSE dist/ngx-highlight-js/
+cd dist/ngx-highlight-js
+npm publish
+cd ../..
+git add -A
+git commit -a -m "published version ${VERSION} to npm"
+git tag  $VERSION
+git push
+git push --tags
