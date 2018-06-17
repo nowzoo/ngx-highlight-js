@@ -1,0 +1,45 @@
+<div class="d-flex mb-4">
+  <div class="mr-4">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="displayDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Display Code
+      </button>
+      <div class="dropdown-menu" aria-labelledby="displayDropdownMenuButton">
+        <a
+          href="#"
+          class="dropdown-item"
+          *ngFor="let d of displays"
+          [class.active]="d===display"
+          (click)="setDisplay($event, d)">
+          {{d.lang}} | {{d.url ? 'Remote URL' : 'String'}}<br>
+          <small>{{d.value | truncate: 30:'...': true}}</small>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="mr-4">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="themeDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Theme
+      </button>
+      <div class="dropdown-menu" aria-labelledby="themeDropdownMenuButton">
+        <a
+          href="#"
+          class="dropdown-item"
+          *ngFor="let t of themes"
+          [class.active]="t.themeName===theme.themeName"
+          (click)="loadTheme($event, t)">{{t.themeTitle}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="display">
+  <div *ngIf="display.url">
+    <small class="text-muted">{{display.lang}} | Remote URL: {{display.value}} | Theme: {{theme.themeName}}</small>
+    <ngx-highlight-js [url]="display.value" [lang]="display.lang"></ngx-highlight-js>
+  </div>
+  <div *ngIf="!display.url">
+    <small class="text-muted">{{display.lang}} | String | Theme: {{theme.themeName}}</small>
+    <ngx-highlight-js [code]="display.value" [lang]="display.lang"></ngx-highlight-js>
+  </div>
+</div>

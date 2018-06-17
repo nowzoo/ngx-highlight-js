@@ -1,16 +1,15 @@
-import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { NgxHighlightJsService } from './ngx-highlight-js.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-highlight-js',
-  exportAs: 'ngxHighlightJs',
-  template: `
-  <pre><code [ngClass]="'hljs ' + lang"
-  [innerHTML]="highlightedHTML"></code></pre>
-  `
+  template: `<pre><code
+      [ngClass]="'hljs ' + lang"
+      [innerHTML]="highlightedHTML"></code></pre>`,
 })
 export class NgxHighlightJsComponent implements OnInit, OnChanges {
+
   @Input() code: string;
   @Input() url: string;
   @Input() lang: string;
@@ -66,5 +65,4 @@ export class NgxHighlightJsComponent implements OnInit, OnChanges {
         this.isInitializing = false;
       });
   }
-
 }

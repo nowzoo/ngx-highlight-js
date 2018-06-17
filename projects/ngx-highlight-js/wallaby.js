@@ -13,7 +13,6 @@ module.exports = function (wallaby) {
       'src/wallabyTest.js',
       'src/**/*spec.js'
     ],
-
     module: {
       rules: [
         {test: /\.css$/, loader: ['raw-loader']},

@@ -166,46 +166,6 @@
         }
       }
     },
-    "ngx-library-starter": {
-      "root": "projects/ngx-library-starter",
-      "sourceRoot": "projects/ngx-library-starter/src",
-      "projectType": "library",
-      "prefix": "ngx-library",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ngx-library-starter/tsconfig.lib.json",
-            "project": "projects/ngx-library-starter/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/ngx-library-starter/ng-package.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ngx-library-starter/src/test.ts",
-            "tsConfig": "projects/ngx-library-starter/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-library-starter/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-library-starter/tsconfig.lib.json",
-              "projects/ngx-library-starter/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "ngx-highlight-js": {
       "root": "projects/ngx-highlight-js",
       "sourceRoot": "projects/ngx-highlight-js/src",

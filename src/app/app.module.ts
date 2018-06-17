@@ -1,32 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { NgxHighlightJsModule, NgxHighlightJsOptions } from '@nowzoo/ngx-highlight-js';
-import { AppComponent } from './app.component';
-import { ExampleUrlComponent } from './example-url/example-url.component';
-import { ExampleUrlVariableComponent } from './example-url-variable/example-url-variable.component';
-import { ExampleStringComponent } from './example-string/example-string.component';
-import { ExampleStringVariableComponent } from './example-string-variable/example-string-variable.component';
-import { ExampleSetThemeComponent } from './example-set-theme/example-set-theme.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgStringPipesModule } from 'angular-pipes';
 
-const opts = new NgxHighlightJsOptions();
-opts.theme = 'monokai-sublime';
+
+import { NgxHighlightJsModule, NGX_HIGHLIGHT_JS_DEFAULT_THEME } from '@nowzoo/ngx-highlight-js';
+import { AppComponent } from './app.component';
+import { DemoComponent } from './demo/demo.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExampleUrlComponent,
-    ExampleUrlVariableComponent,
-    ExampleStringComponent,
-    ExampleStringVariableComponent,
-    ExampleSetThemeComponent,
+    DemoComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    NgxHighlightJsModule.forRoot()
+    NgxHighlightJsModule,
+    NgStringPipesModule,
+    HttpClientModule
   ],
-  providers: [{provide: NgxHighlightJsOptions, useValue: opts}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {provide: NGX_HIGHLIGHT_JS_DEFAULT_THEME, useValue: 'atelier-cave-dark'}
+  ]
 })
 export class AppModule { }

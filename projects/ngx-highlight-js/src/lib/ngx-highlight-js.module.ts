@@ -1,10 +1,17 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-
-import { NgxHighlightJsComponent } from './ngx-highlight-js.component';
+import { NgxHighlightJsThemeService } from './ngx-highlight-js-theme.service';
+import { NgxHighlightJsScriptService } from './ngx-highlight-js-script.service';
 import { NgxHighlightJsService } from './ngx-highlight-js.service';
-import { NgxHighlightJsOptions } from './ngx-highlight-js-options';
+import {
+  NGX_HIGHLIGHT_JS_DEFAULT_THEME,
+  NGX_HIGHLIGHT_JS_URL
+} from './ngx-highlight-js-options';
+import { NgxHighlightJsComponent } from './ngx-highlight-js.component';
+
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,11 +19,12 @@ import { NgxHighlightJsOptions } from './ngx-highlight-js-options';
   ],
   declarations: [NgxHighlightJsComponent],
   exports: [NgxHighlightJsComponent],
-  providers: [NgxHighlightJsService, {provide: NgxHighlightJsOptions, useClass: NgxHighlightJsOptions}]
+  providers: [
+    NgxHighlightJsThemeService,
+    NgxHighlightJsScriptService,
+    NgxHighlightJsService,
+    {provide: NGX_HIGHLIGHT_JS_URL, useValue: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0'},
+    {provide: NGX_HIGHLIGHT_JS_DEFAULT_THEME, useValue: 'default'},
+  ]
 })
-export class NgxHighlightJsModule {
-  public static forRoot(): ModuleWithProviders {
-    return {ngModule: NgxHighlightJsModule, providers: [NgxHighlightJsService,
-      {provide: NgxHighlightJsOptions, useClass: NgxHighlightJsOptions}]};
-  }
-}
+export class NgxHighlightJsModule {}

@@ -1,8 +1,3 @@
-export interface INgxHighlightJsOptions {
-  baseCdnURL?: string;
-  theme?: string;
-}
-export class NgxHighlightJsOptions implements INgxHighlightJsOptions {
-  baseCdnURL = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0';
-  theme = 'default';
-}
+import { InjectionToken } from '@angular/core';
+export const NGX_HIGHLIGHT_JS_URL = new InjectionToken<string>('The base url for highlight.js');
+export const NGX_HIGHLIGHT_JS_DEFAULT_THEME = new InjectionToken<string>('The default theme for highlight.js');
