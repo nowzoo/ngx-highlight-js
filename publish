@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cd projects/ngx-highlight-js && npm version patch && cd ../.. && ng build ngx-highlight-js --prod && cp README.md LICENSE dist/ngx-highlight-js/ && cd dist/ngx-highlight-js && npm publish && cd ../..

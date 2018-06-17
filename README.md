@@ -6,14 +6,14 @@ Angular component and service for Highlight.js. Works with remote URLs or string
 [Demo](https://nowzoo.github.io/ngx-highlight-js/)
 
 ## Quick Start
-Install the library with NPM...
+Install the library and the `@nowzoo/sheetload` dependency with NPM...
 
 
 ```bash
-npm i @nowzoo/ngx-highlight-js --save
+npm i @nowzoo/ngx-highlight-js @nowzoo/sheetload --save
 ```
 
-Import into `AppModulew` with `NgxHighlightJsModule.forRoot()`...</p>
+Import into `AppModule` with `NgxHighlightJsModule.forRoot()`...</p>
 ```ts
 import { NgxHighlightJsModule } from '@nowzoo/ngx-highlight-js';
 // other imports...
