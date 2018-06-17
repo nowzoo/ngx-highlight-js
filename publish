@@ -1,15 +1,25 @@
 #!/usr/bin/env bash
 
+# bump the version
 cd projects/ngx-highlight-js
 VERSION="$(npm version patch)"
 cd ../..
+
+# build the lib
 ng build ngx-highlight-js --prod
 cp README.md LICENSE dist/ngx-highlight-js/
+
+# publish to NPM
 cd dist/ngx-highlight-js
 npm publish
 cd ../..
+
+# build the demo
+ng build --aot --prod
+
+# commit with tag
 git add -A
-git commit -a -m "published version ${VERSION} to npm"
+git commit -m "published version ${VERSION} to npm"
 git tag  $VERSION
 git push
 git push --tags
