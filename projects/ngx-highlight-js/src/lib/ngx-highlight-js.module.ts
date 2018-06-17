@@ -19,12 +19,18 @@ import { NgxHighlightJsComponent } from './ngx-highlight-js.component';
   ],
   declarations: [NgxHighlightJsComponent],
   exports: [NgxHighlightJsComponent],
-  providers: [
-    NgxHighlightJsThemeService,
-    NgxHighlightJsScriptService,
-    NgxHighlightJsService,
-    {provide: NGX_HIGHLIGHT_JS_URL, useValue: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0'},
-    {provide: NGX_HIGHLIGHT_JS_DEFAULT_THEME, useValue: 'default'},
-  ]
 })
-export class NgxHighlightJsModule {}
+export class NgxHighlightJsModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: NgxHighlightJsModule,
+      providers: [
+        NgxHighlightJsThemeService,
+        NgxHighlightJsScriptService,
+        NgxHighlightJsService,
+        {provide: NGX_HIGHLIGHT_JS_URL, useValue: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0'},
+        {provide: NGX_HIGHLIGHT_JS_DEFAULT_THEME, useValue: 'default'},
+      ]
+    };
+  }
+}

@@ -7,9 +7,7 @@ import { NgxHighlightJsScriptService } from './ngx-highlight-js-script.service';
 export class NgxHighlightJsService {
   private _hljs: any;
   private _loadedPromise: Promise<any>;
-  get hljs(): any {
-    return this._hljs;
-  }
+
 
   get theme(): string {
     return this.themeService._theme;
@@ -46,7 +44,7 @@ export class NgxHighlightJsService {
         return this.loadLanguage(lang);
       })
       .then(() => {
-        const hl = this.hljs.highlight(lang, code, true).value;
+        const hl = this._hljs.highlight(lang, code, true).value;
         return hl;
       });
   }

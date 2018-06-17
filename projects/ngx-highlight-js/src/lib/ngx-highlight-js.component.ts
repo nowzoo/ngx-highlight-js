@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-highlight-js',
+  exportAs: `ngxHighlightJs`,
   template: `<pre><code
       [ngClass]="'hljs ' + lang"
       [innerHTML]="highlightedHTML"></code></pre>`,

@@ -1,9 +1,9 @@
 
 # ngx-highlight-js
 
-Angular component and service for Highlight.js. Works with remote URLs or strings/variables. Loads highlight.js core, andlanguages and themes as needed. No dependencies.
+Angular component and service for Highlight.js. Works with remote URLs or strings/variables. Loads highlight.js core, languages and themes as needed.
 
-[Demos](https://nowzoo.github.io/ngx-highlight-js/)
+[Demo](https://nowzoo.github.io/ngx-highlight-js/)
 
 ## Quick Start
 Install the library with NPM...
@@ -13,7 +13,7 @@ Install the library with NPM...
 npm i @nowzoo/ngx-highlight-js --save
 ```
 
-Import into your `AppModule` with `NgxHighlightJsModule.forRoot()`...</p>
+Import into `AppModulew` with `NgxHighlightJsModule.forRoot()`...</p>
 ```ts
 import { NgxHighlightJsModule } from '@nowzoo/ngx-highlight-js';
 // other imports...
@@ -23,7 +23,7 @@ imports: [
   // other imports...
 ]
 })
-export class AppModule { }
+export class MyModule { }
 ```
 
 Add an `NgxHighlightJsComponent`. You can provide an absolute or relative URL with the `url` input...
@@ -49,46 +49,50 @@ Or use the `code` input to use a string or a variable...
 
 `static forRoot()`
 
+### Global Options
 
-### Class: `NgxHighlightJsOptions`
+**Change the default theme:**
 
-You can `provide` this in your module to change the theme or base URL for getting highlight.js.
+The `default` theme is loaded by default. To change this on an app-wide basis, provide an alternate value for `NGX_HIGHLIGHT_JS_DEFAULT_THEME`:
+
 ```ts
-providers: [
-  {
-    provide: NgxHighlightJsOptions,
-    useValue: {
-      baseCdnURL: '//another.cdn/path',
-      theme: 'dracula'
-    }
-  }
-]
+@NgModule({
+  providers: [
+    {provide: NGX_HIGHLIGHT_JS_DEFAULT_THEME, useValue: 'atelier-cave-dark'}
+  ]
+})
+export class AppModule { }
 ```
-`baseCdnURL: string`  
-Where to find the highlight.js files.  
-Default: `//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0`.
 
-`theme: string`  
-The basename of the theme you want to use, like `'monokai-sublime'`.  
-Default: `'default'`.
+**Change the CDN URL:**
 
+By default, Highlight.js assets are downloaded from `//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0`. Change this with `NGX_HIGHLIGHT_JS_DEFAULT_THEME`:
+```ts
+@NgModule({
+  providers: [
+    {provide: NGX_HIGHLIGHT_JS_DEFAULT_THEME, useValue: '/path/to/highlight-js'}
+  ]
+})
+export class AppModule { }
+```
 
 
 ### Service: `NgxHighlightJsService`
 
 **Methods**
 
-`hljs(): Promise<any>`  
+`loaded(): Promise<any>`  
 Ensures highlight.js is loaded, then resolves with the global `hljs` instance.
 
-`loadLanguage(lang: string): Promise<any>`  
-Ensures the language is loaded, then resolves with the global `hljs` instance.
+`loadLanguage(lang: string): Promise<void>`  
+Resolves after ensuring the javascript to format the language has been loaded.
+
+`loadTheme(theme: string): Promise<void>`  
+Resolves after the stylesheet for the theme has loaded. Use the basename of the theme, like `'dracula'`. Only one theme can be loaded at a time.
 
 `highlight(lang: string, code: string): Promise<string>`  
 Highlights `code` with `lang`.
 
-`loadTheme(theme: string): Promise<void>`  
-Loads a different theme, globally. Use the basename of the theme, like `'dracula'`.
 
 **Properties**
 
@@ -116,3 +120,43 @@ True when highlighting (or re-highlighting) the code.
 
 `error: string`
 Set if highlighting fails.
+
+## Contributing
+
+Contributions are welcome.
+
+```bash
+git clone https://github.com/nowzoo/ngx-highlight-js.git
+npm i
+ng build ngx-highlight-js --prod
+```
+
+The library code is located under [projects/ngx-highlight-js](https://github.com/nowzoo/ngx-highlight-js/tree/master/projects/ngx-highlight-js).
+
+Testing the library...
+
+```bash
+ng test ngx-highlight-js
+```
+
+Building the library...
+
+```bash
+ng build ngx-highlight-js --prod
+```
+
+The demo code is in [src](https://github.com/nowzoo/ngx-highlight-js/tree/master/src). Run the demo locally...
+
+```bash
+# Build the current version of the library first...
+ng build ngx-highlight-js --prod
+
+ng serve --open
+```
+
+
+
+
+
+## License
+[MIT](https://github.com/nowzoo/ngx-highlight-js/blob/master/LICENSE)

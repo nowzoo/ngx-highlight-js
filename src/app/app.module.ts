@@ -18,7 +18,7 @@ import { DemoComponent } from './demo/demo.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    NgxHighlightJsModule,
+    NgxHighlightJsModule.forRoot(),
     NgStringPipesModule,
     HttpClientModule
   ],
