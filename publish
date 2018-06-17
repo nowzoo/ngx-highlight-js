@@ -19,6 +19,10 @@ cd ../..
 # build the demo
 ng build --aot --prod --base-href /ngx-highlight-js/
 
+# write the version to the demo...
+echo "${VERSION}" >> docs/VERSION
+
+
 
 # commit with tag
 git add -A

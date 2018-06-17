@@ -1,6 +1,6 @@
 {
   "name": "@nowzoo/ngx-highlight-js",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "description": "Angular component and service for highlight.js",
   "keywords": [
     "angular",
