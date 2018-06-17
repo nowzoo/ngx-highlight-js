@@ -14,8 +14,11 @@ cd dist/ngx-highlight-js
 npm publish
 cd ../..
 
+
+
 # build the demo
-ng build --aot --prod
+ng build --aot --prod --base-href /ngx-highlight-js/
+
 
 # commit with tag
 git add -A
