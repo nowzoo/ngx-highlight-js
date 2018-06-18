@@ -6,13 +6,11 @@ import { NgStringPipesModule } from 'angular-pipes';
 
 
 import { NgxHighlightJsModule, NGX_HIGHLIGHT_JS_DEFAULT_THEME } from '@nowzoo/ngx-highlight-js';
-import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     DemoComponent,
   ],
   imports: [
@@ -22,7 +20,7 @@ import { DemoComponent } from './demo/demo.component';
     NgStringPipesModule,
     HttpClientModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [DemoComponent],
   providers: [
     {provide: NGX_HIGHLIGHT_JS_DEFAULT_THEME, useValue: 'atelier-cave-dark'}
   ]
