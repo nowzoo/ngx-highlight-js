@@ -138,6 +138,8 @@ Testing the library...
 ```bash
 ng test ngx-highlight-js
 ```
+You can also use Wallaby for testing. Use the config found at `projects/ngx-highlight-js/wallaby.js`.
+
 
 Building the library...
 
