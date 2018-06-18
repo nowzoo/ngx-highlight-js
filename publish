@@ -20,7 +20,7 @@ cd ../..
 ng build --aot --prod --base-href /ngx-highlight-js/
 
 # write the version to the demo...
-echo "${VERSION}" >> docs/VERSION
+# echo "${VERSION}" >> docs/VERSION
 
 
 
